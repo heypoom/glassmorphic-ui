@@ -1,6 +1,6 @@
 # Glassmorphic UI Demo
 
-![Demo](screenshots/demo.png)
+[![Demo](screenshots/demo.png)](https://glassmorphic.netlify.app)
 
 This is a **proof-of-concept** for glassmorphism-style UI designs for the web.
 
@@ -8,7 +8,7 @@ This is a **proof-of-concept** for glassmorphism-style UI designs for the web.
 
 ## Features
 
-![Gifs](screenshots/demo.gif)
+[![Gifs](screenshots/demo.gif)](https://glassmorphic.netlify.app)
 
 - Mouse tracking for hover light effects
 - Blur and saturation with `backdrop-filter: blur() saturate()`
