@@ -40,6 +40,29 @@
       margin-bottom: 50px;
     }
 
+    @media (max-width: 600px) {
+      .group {
+        flex-direction: column;
+      }
+
+      .group .card:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 50px;
+      }
+
+      .card {
+        text-align: center;
+      }
+
+      .card.stats-card .percent {
+        font-size: 2.8em !important;
+      }
+
+      .card .title {
+        font-size: 2.2em !important;
+      }
+    }
+
     .card {
       display: flex;
       flex-direction: column;
