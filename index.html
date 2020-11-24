@@ -88,8 +88,12 @@
       box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
     }
 
-    .card:hover {
-      background-image: linear-gradient(330deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.9));
+    .card:hover, .card.high-contrast {
+      background-image: linear-gradient(330deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9));
+    }
+
+    .card.high-contrast:hover {
+      background-image: linear-gradient(330deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9));
     }
 
     .card:not(:last-child) {
@@ -147,11 +151,11 @@
 <body>
   <div class="container">
     <div class="group">
-      <div class="card stats-card">
+      <div class="card stats-card high-contrast">
         <div class="percent color-text">100<small>%</small></div>
       </div>
 
-      <div class="card stats-card">
+      <div class="card stats-card high-contrast">
         <div class="percent color-text">50<small>%</small></div>
       </div>
     </div>
