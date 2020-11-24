@@ -33,6 +33,7 @@
 
     .group {
       display: flex;
+      align-items: center;
       width: 100%;
     }
 
@@ -40,9 +41,10 @@
       margin-bottom: 50px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .group {
         flex-direction: column;
+        justify-content: center;
       }
 
       .group .card:not(:last-child) {
