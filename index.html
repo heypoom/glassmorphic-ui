@@ -73,7 +73,7 @@
 
       background-color: rgba(255, 255, 255, 0.8);
       background: linear-gradient(330deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.75));
-      transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
       cursor: pointer;
 
       width: 100%;
@@ -86,6 +86,10 @@
       backdrop-filter: blur(10px) saturate(130%);
       -webkit-backdrop-filter: blur(10px) saturate(130%);
       box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
     }
 
     .card:hover, .card.high-contrast {
