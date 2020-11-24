@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism UI Test</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue';
+      font-weight: 300;
+      font-size: 18px;
+
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 100vh;
+      background-image: url("./graphic-0.jpg");
+      background-size: cover;
+      background-position: center center;
+
+      padding: 3em;
+    }
+
+    .group {
+      display: flex;
+      width: 100%;
+    }
+
+    .group:not(:last-child) {
+      margin-bottom: 50px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      background-color: rgba(255, 255, 255, 0.8);
+      background: linear-gradient(330deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.75));
+      width: 100%;
+      padding: 18px 25px;
+      min-height: 150px;
+
+      max-width: 280px;
+      border-radius: 8px;
+
+      backdrop-filter: blur(10px) saturate(130%);
+      box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+    }
+
+    .card:not(:last-child) {
+      margin-right: 50px;
+    }
+
+    .card.stats-card {
+      height: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .card .title {
+      font-size: 2.8em;
+    }
+
+    .card.stats-card .percent {
+      font-size: 4.5em;
+      font-weight: 400;
+      font-family: "JetBrains Mono";
+    }
+
+    .color-text {
+      background-image: url("./graphic-0.jpg");
+      background-size: cover;
+      background-position: center;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+
+      text-shadow: rgba(0, 0, 0, 0.05) 1px 0 8px;
+    }
+
+    .percent small {
+      font-size: 0.5em;
+      margin-left: 0.2em;
+      font-weight: 300;
+    }
+
+    @keyframes gradient-bg {
+      0% {background-position:0% 88%}
+      50% {background-position:100% 13%}
+      100% {background-position:0% 88%}
+    }
+
+    .gradient-bg {
+      background: linear-gradient(203deg, #00d0ff, #dc00ff);
+      background-size: 400% 400%;
+
+      animation: gradient-bg 3s ease infinite;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="group">
+      <div class="card stats-card">
+        <div class="percent color-text">100<small>%</small></div>
+      </div>
+
+      <div class="card stats-card">
+        <div class="percent color-text">50<small>%</small></div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="card">
+        <div class="title color-text">very brave</div>
+      </div>
+
+      <div class="card">
+        <div class="title">very good</div>
+      </div>
+
+      <div class="card">
+        <div class="title color-text">thank you</div>
+      </div>
+
+      <div class="card">
+        <div class="title">16:00</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
