@@ -90,6 +90,8 @@
       backdrop-filter: blur(10px) saturate(130%);
       -webkit-backdrop-filter: blur(10px) saturate(130%);
       box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+
+      will-change: --x, --y, --size;
     }
 
     .card:hover {
@@ -201,15 +203,38 @@
 
   <script>
     function onCardMouseMove(e) {
+      let el = event.currentTarget
+      el.removeEventListener('mousemove', onCardMouseMove);
       const rect = e.target.getBoundingClientRect()
 
       let x = e.clientX - rect.left;
       let y = e.clientY - rect.top;
 
-      e.target.style.setProperty('--size', '400px');
-      e.target.style.setProperty('--x', x + 'px');
-      e.target.style.setProperty('--y', y + 'px');
+      requestAnimationFrame(function() {
+        el.style.setProperty('--size', '400px');
+        el.style.setProperty('--x', x + 'px');
+        el.style.setProperty('--y', y + 'px');
+      })
+
+      // 60 fps calculation
+      setTimeout(function() {
+        el.addEventListener('mousemove', onCardMouseMove);
+      }, fps)
     }
+
+    let fps = 1000 / 60
+
+    ;((() =>
+    new Promise(function(resolve) {
+      requestAnimationFrame(function(t1) {
+        requestAnimationFrame(function(t2) {
+          resolve(1000 / (1000 / (t2 - t1)))
+        })
+      })
+    }))()).then(function(_fps) {
+      console.log(_fps)
+      fps = _fps
+    })
 
     function onCardMouseLeave(e) {
       e.target.style.setProperty('--size', '0px');
