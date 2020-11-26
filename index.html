@@ -226,7 +226,7 @@
     let fps = 1000 / 60
 
     ;((function() {
-      new Promise(function(resolve) {
+      return new Promise(function(resolve) {
         requestAnimationFrame(function(t1) {
           requestAnimationFrame(function(t2) {
             resolve(1000 / (1000 / (t2 - t1)))
